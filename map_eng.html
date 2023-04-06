@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="eng">
 	<head>
-		<meta charset="euc-kr">
+		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
@@ -23,30 +23,30 @@
 		<script>
 			$(function() {
 				var kakaoMapFn = function() {
-					var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div 
+					var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div 
 					mapOption = { 
-						center: new kakao.maps.LatLng(37.028210, 127.016810), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-						level: 3 // ÁöµµÀÇ È®´ë ·¹º§
+						center: new kakao.maps.LatLng(37.028210, 127.016810), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+						level: 3 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
 					};
 					var map = new kakao.maps.Map(mapContainer, mapOption);
-					// ¸¶Ä¿°¡ Ç¥½ÃµÉ À§Ä¡ÀÔ´Ï´Ù 
+					// ë§ˆì»¤ê°€ í‘œì‹œë  ìœ„ì¹˜ì…ë‹ˆë‹¤ 
 					var markerPosition  = new kakao.maps.LatLng(37.028210, 127.016810); 
-					// ¸¶Ä¿¸¦ »ı¼ºÇÕ´Ï´Ù
+					// ë§ˆì»¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 					var marker = new kakao.maps.Marker({
 						position: markerPosition
 					});
-					// ¸¶Ä¿°¡ Áöµµ À§¿¡ Ç¥½ÃµÇµµ·Ï ¼³Á¤ÇÕ´Ï´Ù
+					// ë§ˆì»¤ê°€ ì§€ë„ ìœ„ì— í‘œì‹œë˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤
 					marker.setMap(map);
 
-					var iwContent = '<div style="padding:5px;text-align:center">SamHyun ENC</div>', // ÀÎÆ÷À©µµ¿ì¿¡ Ç¥ÃâµÉ ³»¿ëÀ¸·Î HTML ¹®ÀÚ¿­ÀÌ³ª document element°¡ °¡´ÉÇÕ´Ï´Ù
-    					iwPosition = new kakao.maps.LatLng(37.028210, 127.016810); //ÀÎÆ÷À©µµ¿ì Ç¥½Ã À§Ä¡ÀÔ´Ï´Ù
-						// ÀÎÆ÷À©µµ¿ì¸¦ »ı¼ºÇÕ´Ï´Ù
+					var iwContent = '<div style="padding:5px;text-align:center">SamHyun ENC</div>', // ì¸í¬ìœˆë„ìš°ì— í‘œì¶œë  ë‚´ìš©ìœ¼ë¡œ HTML ë¬¸ìì—´ì´ë‚˜ document elementê°€ ê°€ëŠ¥í•©ë‹ˆë‹¤
+    					iwPosition = new kakao.maps.LatLng(37.028210, 127.016810); //ì¸í¬ìœˆë„ìš° í‘œì‹œ ìœ„ì¹˜ì…ë‹ˆë‹¤
+						// ì¸í¬ìœˆë„ìš°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 					var infowindow = new kakao.maps.InfoWindow({
 						position : iwPosition, 
 						content : iwContent 
 					});
 					
-					// ¸¶Ä¿ À§¿¡ ÀÎÆ÷À©µµ¿ì¸¦ Ç¥½ÃÇÕ´Ï´Ù. µÎ¹øÂ° ÆÄ¶ó¹ÌÅÍÀÎ marker¸¦ ³Ö¾îÁÖÁö ¾ÊÀ¸¸é Áöµµ À§¿¡ Ç¥½ÃµË´Ï´Ù
+					// ë§ˆì»¤ ìœ„ì— ì¸í¬ìœˆë„ìš°ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤. ë‘ë²ˆì§¸ íŒŒë¼ë¯¸í„°ì¸ markerë¥¼ ë„£ì–´ì£¼ì§€ ì•Šìœ¼ë©´ ì§€ë„ ìœ„ì— í‘œì‹œë©ë‹ˆë‹¤
 					infowindow.open(map, marker); 
 				};
 
