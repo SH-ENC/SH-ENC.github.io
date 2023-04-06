@@ -1416,9 +1416,9 @@ svg:not(:root) {
     height:auto;
 }
 .business-area .business-right img {
-    max-width:80%;
-    max-height:80%;
-    /*width: 900px !important;*/
+    max-width:70%;
+    max-height:60%;
+    /*width: 900px;*/
     height:50%;
 }
 @media (max-height: 855px){
