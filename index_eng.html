@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="euc-kr">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Welcome to SamHyun-ENC Site</title>
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/theme.css" rel="stylesheet">
+		<link href="css/slick.css" rel="stylesheet">
+		<link href="css/slick-theme.css" rel="stylesheet">
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<script src="js/jquery.js"></script>
+		<script src="js/slick.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/jquery.easing.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<link rel="icon" type="img/svg" href="img/logo.svg">
+		<script>
+			$(function() {
+				$(".img-slider").slick({
+					adaptiveHeight:false,
+					autoplay:true,
+					autoplaySpeed:4000,
+					fade:true,
+					centerMode:true,
+					pauseOnHover : false,
+				});
+				sliderTextAnimation = function(slideNum) {
+					//�ؽ�Ʈ �ִϸ��̼�
+					const introText = $("#slide_" + (slideNum+1)).find("span");
+					let timer = 100;
+					introText.each(function(i, item) {
+						item.style.animation = `fade 500ms ${(timer += 50)}ms forwards`;
+					});
+				}
+				
+				$(".img-slider").on("afterChange", function(event, slick, currentSlide) {
+					sliderTextAnimation(currentSlide);
+				});
+
+				$(".img-slider").on("beforeChange", function(event, slick, currentSlide) {
+					const introText = $("#slide_" + (currentSlide+1)).find("span");
+
+					introText.each(function(i, item) {
+						item.style.animation = `fadeout 1ms 1ms forwards`;
+					});
+				});
+				
+				$('a.page-scroll').bind('click', function(event) {
+					var $anchor = $(this);
+					$('html, body').stop().animate({
+						scrollTop: $($anchor.attr('href')).offset().top
+					}, 1500, 'easeInOutExpo');
+					event.preventDefault();
+				});
+				sliderTextAnimation(0);
+			});
+		</script>
+	</head>
+	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+		<nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+			<div class="container ht-100">
+				<div id="viewport" class="sub-l-viewport">
+					<div class="l-wrapper">
+						<header class="main-header">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+									<i class="fa fa-bars"></i>
+								</button>
+								<a class="navbar-brand page-scroll header--logo" href="index_eng.html">
+									<img src="img/logo.png"/>
+									<p>SamHyun ENC</p>
+								</a>
+							</div>
+						</header>
+						<div class="sidemenu-bg navbar-collapse navbar-main-collapse collapse"></div>
+						<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+							<ul class="nav navbar-nav m-auto">
+								<li class="tx-rt"><button class="closeBtn" data-toggle="collapse" data-target=".navbar-main-collapse">X</button></li>
+								<li><a href="index_eng.html" class="nav-link">HOME</a></li>
+								<li class="dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="dropdown04" aria-haspopup="true" aria-expanded="false">Information</a>
+									<div class="dropdown-menu-bg dropdown-menu" aria-labelledby="dropdown04">
+										<a class="dropdown-item" href="cmpInfo_eng.html">Introduction</a>
+										<a class="dropdown-item" href="greet_eng.html">Greetings</a>
+										<a class="dropdown-item" href="history_eng.html">History</a>
+										<a class="dropdown-item" href="orgChart_eng.html">Organization</a>
+										<a class="dropdown-item" href="map_eng.html">Location</a>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="dropdown03" aria-haspopup="true" aria-expanded="false">Business field</a>
+									<div class="dropdown-menu-bg dropdown-menu" aria-labelledby="dropdown03">
+										<a class="dropdown-item" href="modeling_eng.html">Modeling</a>
+										<a class="dropdown-item" href="autoFloorPlan_eng.html">Auto drawing</a>
+										<a class="dropdown-item" href="interferenceChk_eng.html">Interference check</a>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="dropdown02" aria-haspopup="true" aria-expanded="false">Customer Support</a>
+									<div class="dropdown-menu-bg dropdown-menu" aria-labelledby="dropdown02">
+										<a class="dropdown-item" href="QNA_eng.html">Q&A</a>
+										<a class="dropdown-item" href="customerCenter_eng.html">web mail</a>
+									</div>
+								</li>
+								<li class="lenguage pd-lt-20"><a href="index.html" class="nav-link pd-rt-5"><span>kr</span></a></li>
+								<li class="lenguage"><a href="index_eng.html" class="nav-link"><span class="is-active">eng</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sub-contents">
+					<div id="viewport" class="pd-bt-0 l-viewport">
+						<div class="l-wrapper">
+							<nav class="l-side-nav">
+								<ul class="side-nav">
+									<li class="is-active"><span>Home</span></li>
+									<li><span>About</span></li>
+									<li><span>Works</span></li>
+									<li><span>Works</span></li>
+								</ul>
+							</nav>
+							<ul class="l-main-content main-content">
+								<li class="l-section section section--is-active">
+									<div class="img-slider">
+										<div id="slide_1" class="slide-items">
+											<p>
+												<span class="slider-span tx-size-30">innovative</span>
+												<br/>
+												<span class="slider-span eng-sub-text tx-size-10">We strive to provide the best service with innovative ideas.</span>
+											</p>
+											<img class="slider-img" src="img/image_1_bk.jpg">
+										</div>
+										<div id="slide_2" class="slide-items">
+											<p>
+												<span class="slider-span tx-size-30">creativity</span>
+												<br/>
+												<span class="slider-span eng-sub-text tx-size-10">We provide designs<br/>that meet customer needs with creative ideas.</span>
+											</p>
+											<img class="slider-img" src="img/pipe_1_bk.jpg">
+										</div>
+									</div>
+								</li>
+								<li class="l-section section">
+									<div class="home-intro">
+										<div class="home-intro--banner">
+											<h1>Design<br>OF<br>SAMHYUN</h1>
+											<div class="border-blur"><img src="img/blueprint_1.jpg" alt="Welcome"></div>
+										</div>
+										<div class="home-intro--options">
+										<a href="#0">
+											<h3>SYSTEM</h3>
+											<p>We respond in advance to engineering problems through 3D modeling construction and data management. Furthermore, we are creating the basis for a design automation system.</p>
+										</a>
+										<a href="#0">
+											<h3>Engineering</h3>
+											<p>We supply best engineering services based on a lot of experience. It is Regardless of the field or industry, but provides total engineering services from design, drawing, and on-site follow-up.</p>
+										</a>
+										<a href="#0">
+											<h3>Analysis</h3>
+											<p>We have the ability to analyze and study solve a problems them. Through the calculation and simulation process using verified tools gives can trust results.</p>
+										</a>
+										</div>
+									</div>
+								</li>
+								<li class="l-section section about_section">
+									<div class="about">
+										<div class="about--banner">
+											<h2>Our company<br>provides outstanding designs<br>to meet the diverse needs of<br>our customers</h2>
+											<img src="img/pipe.png" alt="About Us">
+										</div>
+										<div class="about--options">
+											<a href="#0"></a>
+											<a href="#0"></a>
+											<a href="#0"></a>
+										</div>
+									</div>
+								</li>
+								<li class="l-section section">
+									<div class="work">
+										<h2>3D Modeling</h2>
+										<div class="work--lockup">
+											<ul class="slider">
+												<li class="slider--item slider--item-left">
+													<a href="#0">
+														<div class="slider--item-image">
+														<img src="img/modeling_1.jpg" alt="modeling_1">
+														</div>
+														<p class="slider--item-title">PIPING &amp; EQUIP</p>
+														<p class="slider--item-description">PIPING & EQUIP implementation and interference check through PDMS & REVIT.</p>
+													</a>
+												</li>
+												<li class="slider--item slider--item-center">
+													<a href="#0">
+														<div class="slider--item-image">
+														<img src="img/modeling_4.jpg" alt="Metiew and Smith">
+														</div>
+														<p class="slider--item-title">Integration</p>
+														<p class="slider--item-description">Integrate STEEL STRUCTURE, PIPING, CABLE TRAY, DUCT, etc. using PDMS, TEKLA, REVIT to check interference between each other.</p>
+													</a>
+												</li>
+												<li class="slider--item slider--item-right">
+													<a href="#0">
+														<div class="slider--item-image">
+														<img src="img/modeling_3.jpg" alt="Alex Nowak">
+														</div>
+														<p class="slider--item-title">Integration</p>
+														<p class="slider--item-description">Integrate STEEL STRUCTURE, PIPING, CABLE TRAY, DUCT, etc. using PDMS, TEKLA, REVIT to check interference between each other.</p>
+													</a>
+												</li>
+											</ul>
+											<div class="slider--prev">
+												<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+												viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+													<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+														<path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+														c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+														c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+													</g>
+												</svg>
+											</div>
+											<div class="slider--next">
+												<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+													<g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+														<path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+													</g>
+												</svg>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<script src="js/hammer-2.0.8.js"></script>
+		<script src="js/functions.js"></script>
+	</body>
+</html>
