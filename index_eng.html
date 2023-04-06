@@ -25,6 +25,16 @@
 		<link rel="icon" type="img/svg" href="img/logo.svg">
 		<script>
 			$(function() {
+				var slideHeader = [
+					"PIPING & EQUIP",
+					"TEKLA STRUCTURE",
+					"Integration"
+				];
+				var slideText = [
+					"By using 3d programs (revit, e3d), quick and accurate bm<br/> calculation and easy-to-understand designs are implemented.",
+					"Using Tekla structure Program, <br/>steel frame design, production, and installation<br/>all aspects of construction<br/>are realized.",
+					"Using PDMS, TEKLA, REVIT<br/>STEEL STRUCTURE,<br/>PIPING, CABLE TRAY, DUCT, etc. are integrated into one<br/>Samhyun has the technology to check mutual interference."
+				];
 				$(".img-slider").slick({
 					adaptiveHeight:false,
 					autoplay:true,
@@ -32,6 +42,11 @@
 					fade:true,
 					centerMode:true,
 					pauseOnHover : false,
+				});
+				$(".business-right").slick({
+					arrows: true,
+					prevArrow: $('.prev'),
+    				nextArrow: $('.next'),
 				});
 				sliderTextAnimation = function(slideNum) {
 					//�ؽ�Ʈ �ִϸ��̼�
@@ -52,6 +67,10 @@
 					introText.each(function(i, item) {
 						item.style.animation = `fadeout 1ms 1ms forwards`;
 					});
+				});
+				$(".business-right").on("afterChange", function(event, slick, currentSlide) {
+					$("#business_header").html(slideHeader[currentSlide]);
+					$("#business_content").html(slideText[currentSlide]);
 				});
 				
 				$('a.page-scroll').bind('click', function(event) {
@@ -135,7 +154,7 @@
 											<p>
 												<span class="slider-span tx-size-30">innovative</span>
 												<br/>
-												<span class="slider-span eng-sub-text tx-size-10">We strive to provide the best service with innovative ideas.</span>
+												<span class="slider-span eng-sub-text tx-size-14">We strive to provide the best service with innovative ideas.</span>
 											</p>
 											<img class="slider-img" src="img/image_1_bk.jpg">
 										</div>
@@ -143,7 +162,7 @@
 											<p>
 												<span class="slider-span tx-size-30">creativity</span>
 												<br/>
-												<span class="slider-span eng-sub-text tx-size-10">We provide designs<br/>that meet customer needs with creative ideas.</span>
+												<span class="slider-span eng-sub-text tx-size-14">We provide designs<br/>that meet customer needs with creative ideas.</span>
 											</p>
 											<img class="slider-img" src="img/pipe_1_bk.jpg">
 										</div>
@@ -185,6 +204,26 @@
 									</div>
 								</li>
 								<li class="l-section section">
+									<div class="business-area">
+										<div class="business-left">
+											<h1 id="business_header">PIPING &amp; EQUIP</h1>
+											<span id="business_content">By using 3d programs (revit, e3d), quick and accurate bm<br/> calculation and easy-to-understand designs are implemented.</span>
+											<div class="pager">
+												<div class="prev">
+													<span></span>
+												</div>
+												<div class="next">
+													<span></span>
+												</div>
+											</div>
+										</div>
+										<div class="business-right">
+											<img src="img/modeling_1.jpg" alt="modeling_1">
+											<img src="img/modeling_7.png" alt="modeling_4">
+											<img src="img/modeling_3.jpg" alt="modeling_1">
+										</div>
+									</div>
+									<!--
 									<div class="work">
 										<h2>3D Modeling</h2>
 										<div class="work--lockup">
@@ -236,6 +275,7 @@
 											</div>
 										</div>
 									</div>
+									-->
 								</li>
 							</ul>
 						</div>

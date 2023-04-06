@@ -352,6 +352,15 @@
 .tx-size-10 {
     font-size: 10px;
 }
+.tx-size-13 {
+    font-size: 13px;
+}
+.tx-size-14 {
+    font-size: 14px;
+}
+.tx-size-15 {
+    font-size: 15px;
+}
 .tx-size-30 {
     font-size: 30px;
 }
@@ -694,6 +703,7 @@
     }
     .about--banner h2 {
         z-index: -1;
+        font-size: 50px;
     }
 }
 /*********************************************intro***********************************/
@@ -1160,7 +1170,7 @@ svg:not(:root) {
     bottom: -90px;
     right: -12px;
 }
-@media(max-width:360px) {
+@media(max-width:412px) {
     .about--banner img {
         bottom: -40px;
     }
@@ -1257,18 +1267,44 @@ svg:not(:root) {
     font-size: 40px;
     color:#fff;
 }
-@media(min-width:768px) {
+.slide-items>p>span:nth-child(1) {
+    font-weight: 600;
+    margin-bottom:50px;
+}
+@media(min-width:666px) {
     .slide-items>p>span:nth-child(1) {
-        font-size: 60px;
-        font-weight: 600;
+        font-size: 40px;
     }
     .slide-items>p>span:nth-child(3) {
-        font-size: 20px;
+        font-size: 18px;
+    }
+}
+@media(min-width:910px) {
+    .slide-items>p>span:nth-child(1) {
+        font-size: 60px;
+    }
+    .slide-items>p>span:nth-child(3) {
+        font-size: 25px;
+    }
+}
+
+@media(max-width:767px) {
+    .mobile-lenguage {
+        position: relative;
+        float: right;
+        height:40px;
     }
 }
 /*********************************text-animation**************************************/
 .slider-span {
 	opacity: 0;
+    line-height: 20px !important;
+    display:inline-block;
+}
+@media(min-width:413px) {
+    .slider-span br {
+        display:none;
+    }
 }
 .eng-sub-text {
     text-transform: none;
@@ -1368,6 +1404,12 @@ svg:not(:root) {
     .email-content {
         width:100%;
     }
+    
+}
+@media(min-width:766px) {
+    .mobile-lenguage {
+        display: none;
+    }
 }
 .qa-text {
     color: #4343a8;
@@ -1404,6 +1446,7 @@ svg:not(:root) {
 }
 #business_content {
     padding: 10px;
+    display: inline-block;
 }
 .business-area .business-right {
     background-size: contain;
@@ -1459,4 +1502,43 @@ svg:not(:root) {
     background-image: url("../img/icons8-more-than-30_w.png");
     background-repeat: no-repeat;
     cursor: pointer;
+}
+@media (max-width: 1279px) {
+    .business-area {
+        height: 100%;
+        width:100%;
+        max-width:100%;
+    }
+    .business-area .business-left h1 {
+        font-size: 14px;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+    .business-area .business-left span {
+        font-size: 11px;
+    }
+    .business-area .business-left span br{
+        display:none !important;
+    }
+    .business-area .business-left {
+        position: static;
+        max-height: 20%;
+        max-width: 90%;
+        width: 90%;
+        box-shadow: none;
+    }
+    .business-area .business-right {
+        position:static;
+        padding: 0px;
+        max-width: 90%;
+        width: 90%;
+    }
+    .business-area .business-right img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    .pager {
+        bottom:150px;
+    }
 }
