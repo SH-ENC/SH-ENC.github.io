@@ -1404,7 +1404,9 @@ svg:not(:root) {
     .email-content {
         width:100%;
     }
-    
+    .qna-contents {
+        text-align: -webkit-center
+    }
 }
 @media(min-width:766px) {
     .mobile-lenguage {
